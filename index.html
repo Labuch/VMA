@@ -6,56 +6,66 @@
 
     <body>
 
-
-    
-
     <div class="card">
         <h1>
-            Vitesses d'entrainement
+           Temps de Passage
         </h1>
-        <h3>
-            tape le temps que tu veux faire 
-        </h3>
-        <div class="field">
-            
-        <label >Selectionner votre distance</label>
-        <select name="distance" id="distance">
-            <option value="SEMI">Semi marathon </option>
-            <option value="10k">10 Km </option>
-            <option value="MARATHON">Marathon</option>
-            <option value="">La reponse D </option>
-        </select>
-        </div>
-        <div class="field">
-            
-            <label >Quel est ton temps souhaité</label>
-            <input type="time" id="expectedTime" name="expectedTime"
-            min="00:00" max="6:00" required>
+        <div class="section">
+            <div class="field">
+                <label >Selectionne ton objectif :</label>
+                <select name="distance" id="distance">
+                    <option value="10k">10 Km </option>
+                    <option value="SEMI">Semi marathon </option>
+                    <option value="MARATHON">Marathon</option>
+                    <option value="">La reponse D </option>
+                </select>
             </div>
-    </div>
+    
+            <div class="field">
+                <label >Quel est ton temps souhaité: </label>
+                <div class="field">   
+                    <input id="hourExpected" type="number" min="0" max="5" step="1" value="0"/>
+                    <label for="hour" >h</label>
+                    <input id="minuteExpected" type="number" min="0" max="60" step="1" value="0"/>
+                    <label for="minute" >min</label>
+                </div>
+             
+            </div>
+            
+            <div class="field">
+                <label id="estimatedVma" ></label>
+            </div>
 
-    <div class="field">
-            <label id="estimatedVma" ></label>
-    </div>
-    <div class="field">
-        <label >Ta vma:</label>
-        <input id="vma" type="number" min="0" max="30" step="0.1" value="12"/>
-        <span>km/h</span>
-    </div>
 
-    <div class="field">
-        <label >Bloc: </label>
-        <select name="trainingDistance" id="trainingDistance">
-            <option value="200">200m</option>
-            <option value="300">300m</option>
-            <option value="400">400m </option>
-            <option value="500">500m  </option>
-        </select>
-    </div>
+        </div>
+        <div class="section">
+        <div class="field">
 
-    <div class="field">
-        <label id="trainingTime"></label>
-     
+            <div class="field">
+                <label >Ta vma:</label>
+                <div class="field">  
+                <input id="vma" type="number" min="0" max="30" step="0.1" />
+                <span>km/h</span>
+                </div>
+            </div>
+            <div class="field"> 
+                <label >Bloc: </label>
+                <select name="trainingDistance" id="trainingDistance">
+                    <option value="0">selection ton bloc</option>
+                    <option value="100">100m</option>
+                    <option value="200">200m</option>
+                    <option value="300">300m</option>
+                    <option value="400">400m </option>
+                    <option value="500">500m  </option>
+                </select></div>
+       
+              
+            </div>
+
+            <div class="field">
+                <label id="trainingTime"></label>
+            </div>
+        </div>
     </div>
     </body>
     <script src="script.js"></script>
