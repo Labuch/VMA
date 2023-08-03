@@ -1,44 +1,98 @@
 <HTML>
     <head>
         <link rel="stylesheet" href="style.css">
-      
     </head>
 
     <body>
 
     <div class="card">
+       
         <h1>
-           Temps de Passage
+            Jasons VMA!
         </h1>
-        <div class="section">
+        <span class="separator"></span> 
+    
+     
+        <div class="description ">
+            La Vitesse Maximale Aérobie (VMA) 
+            est un indicateur incontournable en course à pied. 
+            <br>  Son calcul vous permet de travailler votre vitesse
+            et de définir le temps visé pour une prochaine course officielle. 
+            <br>  Connaître votre VMA est essentiel pour progresser
+            et perfectionner vos capacités physiques.
+
+        <br>   Voici 3 étapes pour définir un objectif, calculer et améliorer sa VMA !
+        </div>
+
+
+        <div class="section red">
+            <div class="header red">
+                <div class="title">1. Définir un objectif</div>
+                <div class="subTitle">Choisir le temps visé selon la distance</div>
+            </div>
             <div class="field">
-                <label >Selectionne ton objectif :</label>
-                <select name="distance" id="distance">
-                    <option value="10k">10 Km </option>
-                    <option value="SEMI">Semi marathon </option>
-                    <option value="MARATHON">Marathon</option>
-                    <option value="">La reponse D </option>
-                </select>
+                <label >Distance de course:</label>
+          
+                <div class="selectContainer">
+                    <input type="radio" name="distance" id="distance1"  value="10k" checked> 
+                        <label  class="radioGroup" for="distance1">10km</label> 
+                    </input>
+                
+                    <input type="radio" name="distance" id="distance2" value="SEMI" >
+                        <label class="radioGroup" for="distance2">Semi</label> 
+                    </input>
+                    <input type="radio" name="distance" id="distance3" value="MARATHON" >
+                        <label class="radioGroup" for="distance3">Marathon</label>
+                    </input>
+                </div>
             </div>
     
             <div class="field">
-                <label >Quel est ton temps souhaité: </label>
+                <label > Temps souhaité: </label>
                 <div class="field">   
                     <input id="hourExpected" type="number" min="0" max="5" step="1" value="0"/>
                     <label for="hour" >h</label>
                     <input id="minuteExpected" type="number" min="0" max="60" step="1" value="0"/>
                     <label for="minute" >min</label>
                 </div>
-             
             </div>
             
+             <div class="field">
+                <label  >Calculer sa Vma : </label>
+                <div ><span id="estimatedVma"><span>km/h</div>
+            </div>
+            
+        </div>
+
+        <div class="section blue">
+
+
+            <div class="header blue">
+                <div class="title">2. Calculer sa Vma</div>
+                <div class="subTitle">Courir la plus grande distance pendant 6 minutes</div>
+            </div>
+            <div>
+                Calculer votre VMA vous permet donc de connaître
+                votre niveau : cela vous permet ensuite de travailler 
+               celle-ci pour gagner en vitesse et en endurance.</div>
             <div class="field">
-                <label id="estimatedVma" ></label>
+                <label >Distance de course parcourue en 6 minutes: </label>
+               
             </div>
 
-
+            
+            <div class="field">
+                <label  >Calculer sa Vma : </label>
+                <div ><span id="estimatedVma"><span>km/h</div>
+            </div>
         </div>
-        <div class="section">
+
+        <div class="section blue">
+
+        <div class="header blue">
+                <div class="title">3. Ameliorer sa Vma</div>
+                <div class="subTitle">Travailler les intervalles</div>
+            </div>
         <div class="field">
 
             <div class="field">
@@ -50,14 +104,26 @@
             </div>
             <div class="field"> 
                 <label >Bloc: </label>
-                <select name="trainingDistance" id="trainingDistance">
-                    <option value="0">selection ton bloc</option>
-                    <option value="100">100m</option>
-                    <option value="200">200m</option>
-                    <option value="300">300m</option>
-                    <option value="400">400m </option>
-                    <option value="500">500m  </option>
-                </select></div>
+
+                <div class="selectContainer">
+                    <input type="radio" name="trainingDistance" id="trainingDistance1"  value="100" checked> 
+                        <label  class="radioGroup" for="trainingDistance1">100</label> 
+                    </input>
+                
+                    <input type="radio" name="trainingDistance" id="trainingDistance2" value="200" >
+                        <label class="radioGroup" for="trainingDistance2">200</label> 
+                    </input>
+                    <input type="radio" name="trainingDistance" id="trainingDistance3" value="300" >
+                        <label class="radioGroup" for="trainingDistance3">300</label>
+                    </input>
+                    <input type="radio" name="trainingDistance" id="trainingDistance4" value="400" >
+                    <label class="radioGroup" for="trainingDistance4">400</label>
+                </input>
+                <input type="radio" name="trainingDistance" id="trainingDistance5" value="500" >
+                <label class="radioGroup" for="trainingDistance5">500</label>
+            </input>
+                </div>
+                
        
               
             </div>
