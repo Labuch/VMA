@@ -45,6 +45,14 @@ const RATIOVMAINTERVALL= {
         min:0.95,
         max:1
     },
+    1000:{
+        min:0.75,
+        max:0.8
+    },
+    2000:{
+        min:0.65,
+        max:0.75
+    },
     
 } 
 
@@ -117,6 +125,12 @@ const handleDistanceChange = (event)=>{
     estimatedVmaLabel.innerHTML = app.getVma()
 }
 
+const handleDistanceIn6minChange = (event)=>{
+    computedVmaVmaLabel.innerHTML = (app.getSpeed(event.target.value/1000, 1/10)).toFixed(1)
+}
+
+handleDistanceIn6minChange
+
 const handleMinuteExpectedChange = (event)=>{
 
     app.minuteExpected = parseInt(event.target.value)
@@ -137,8 +151,9 @@ const handleHourExpectedChange = (event)=>{
 
 
 const handleVmaChange = (event)=>{
-
-    app.vma = event.target.value
+    const newVma = event.target.value
+    app.vma = newVma
+    vmaLabel.innerHTML = newVma
     trainingTimeLabel.innerHTML = app.getIntervallTime()
 }
 
@@ -153,12 +168,15 @@ const distanceInput = document.getElementById('distance')
 const hourExpectedInput = document.getElementById('hourExpected')
 const minExpectedInput = document.getElementById('minuteExpected')
 const estimatedVmaLabel = document.getElementById('estimatedVma')
+const computedVmaVmaLabel = document.getElementById('computedVma')
+const distanceIn6minInput = document.getElementById('distanceIn6min')
 const vmaInput = document.getElementById('vma')
+const vmaLabel =  document.getElementById('vmaLabel')
 const trainingDistance = document.getElementById('trainingDistance')
 const trainingTimeLabel = document.getElementById('trainingTime')
 
 
-
+distanceIn6minInput.onchange = handleDistanceIn6minChange
 distanceInput.onchange = handleDistanceChange
 hourExpectedInput.onchange = handleHourExpectedChange
 minExpectedInput.onchange = handleMinuteExpectedChange
