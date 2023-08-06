@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     height: 60px;
-    width: 200px;
+    width: 300px;
     color:white;
 }
 
@@ -50,6 +50,15 @@ h1{
     font-weight: normal;
     text-transform: uppercase;
 
+}
+
+.timeResult{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+    color:white;
 }
 
 .section{
@@ -117,9 +126,10 @@ input[type="radio"]:checked + label{
 
 .section > .header{
     display: flex;
-    width: 90%;
+    width: 95%;
     flex-direction: column;
-    padding:1rem;
+    line-height: 1.2;
+    padding: 0.2rem;
     color:white;
     position: absolute;
     top :-40px;
@@ -159,6 +169,8 @@ input[type="radio"]:checked + label{
     margin: auto;
     align-items: center;
     justify-content: space-evenly;
+    gap:1rem;
+
 }
 
 .selectContainer{
@@ -171,6 +183,7 @@ input[type="radio"]:checked + label{
 }
 
 .vmaLabel {
+    font-size: 2.6rem;
     text-transform: uppercase;
 }
 

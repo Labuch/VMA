@@ -32,7 +32,7 @@
             </div>
             <div class="sectionContent">
                 <div class="field flexColumn">
-                    <label >Distance de course:</label>
+                    <label >Distance de course :</label>
             
                     <div class="selectContainer" id="distance">
                         <input type="radio" name="distance" id="distance1"  value="10k" checked> 
@@ -49,7 +49,7 @@
                 </div>
         
                 <div class="field ">
-                    <label >Temps souhaité:</label>
+                    <label >Temps souhaité :</label>
                     <div class="field flexRow">   
                         <input id="hourExpected" type="number" min="0" max="5" step="1" value="0"/>
                         <label for="hour" >h</label>
@@ -60,7 +60,7 @@
                 
                 <div class="field flexColumn">
                     <label class="vmaLabel red">Objectif Vma : </label>
-                    <div class="vmaResult bgRed"><span id="estimatedVma"><span>km/h</div>
+                    <div class="vmaResult bgRed"><span id="estimatedVma">...</span>km/h</div>
                 </div>
             </div> 
         </div>
@@ -76,13 +76,13 @@
                 </div>
                 <div class="field flexcolumn">
                     <label >Distance parcourue en 6 minutes :</label>
-                    <div  class="field flexRow"><input id="distanceIn6min" type="number">m</div>
+                    <div  class="field flexRow"><input id="distanceIn6min" type="number">mètres</div>
                 </div>
 
                 
                 <div class="field flexcolumn">
                     <label  class="vmaLabel blue" >Calculer sa VMA : </label>
-                    <div class="vmaResult bgBlue"><span id="computedVma"><span>km/h</div>
+                    <div class="vmaResult bgBlue"><span id="computedVma">...</span>km/h</div>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@
 
             <div class="header blue">
                 <div class="title">3. Ameliorer sa Vma</div>
-                <div class="subTitle">Travailler les intervalles</div>
+                <div class="subTitle">Travailler les intervalles!</div>
             </div>
             <div class="sectionContent">
                
@@ -101,7 +101,7 @@
                     Vous l'avez calculée, vous êtes donc en mesure 
                     de vous situer par rapport à cet indicateur. 
                     <br> 
-                    
+                    <br> 
                     Voici maintenant une partie très pratique 
                     sur l'amélioration de votre VMA : pratiquez les intervalles !
                     Tous les exercices de fractionné sont bons pour s'entrainer 
@@ -139,15 +139,17 @@
                             <input type="radio" name="trainingDistance" id="trainingDistance7" value="1000" >
                             <label class="radioGroup" for="trainingDistance7">1000m</label>
                             <input type="radio" name="trainingDistance" id="trainingDistance8" value="1500" >
-                            <label class="radioGroup" for="trainingDistance7">1500m</label>
+                            <label class="radioGroup" for="trainingDistance8">1500m</label>
                             <input type="radio" name="trainingDistance" id="trainingDistance9" value="2000" >
-                            <label class="radioGroup" for="trainingDistance7">2000m</label>
+                            <label class="radioGroup" for="trainingDistance9">2000m</label>
                         </input>
                         </div>        
                     </div>
                 <div class="field flexColumn">
                     <label  class="vmaLabel blue" >Temps de passage : </label>
-                    <div id="trainingTime"></div>
+                    <div class="field flexRow">
+                     entre <div id="minTrainingTime" class="timeResult bgRed" ></div> et <div class="timeResult bgBlue"  id="maxTrainingTime"></div>
+                    </div>
                 </div>
             </div>
         </div>

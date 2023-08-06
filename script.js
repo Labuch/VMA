@@ -45,7 +45,15 @@ const RATIOVMAINTERVALL= {
         min:0.95,
         max:1
     },
+    800:{
+        min:0.95,
+        max:1
+    },
     1000:{
+        min:0.75,
+        max:0.8
+    },
+    1500:{
         min:0.75,
         max:0.8
     },
@@ -99,19 +107,19 @@ class VmaApp {
             const minVma = Number((expectedSpeed / RATIOVMA[this.distance].max).toFixed(1))
             const maxVma = Number((expectedSpeed / RATIOVMA[this.distance].min).toFixed(1))
             this.vma =  Number(((minVma +  maxVma) /2 ).toFixed(1))
-            return `Ta vma est comprise entre ${minVma} et ${maxVma} km/h` 
+            return this.vma 
         }
        
       }
 
       getIntervallTime = () => {
-        if ( this.vma == 0 || this.trainingDistance == 0 ) {return ''} else {
+        if ( this.vma == 0 || this.trainingDistance == 0 ) {return {min:'', max:''}} else {
             const expectedSpeed =  this.trainingDistance / this.vma * 3.6
             const minTime = Number((expectedSpeed / RATIOVMAINTERVALL[this.trainingDistance].max).toFixed(0))
             const maxTime = Number((expectedSpeed / RATIOVMAINTERVALL[this.trainingDistance].min).toFixed(0))
-            return `Ton temps de passage est compris entre ${getFormatedTime(minTime)} et ${getFormatedTime(maxTime)}`
+            return { min: getFormatedTime(minTime),max: getFormatedTime(maxTime)}
         }
-        }
+    }
 
 
 
@@ -122,7 +130,12 @@ app = new VmaApp()
 
 const handleDistanceChange = (event)=>{
     app.distance = event.target.value
-    estimatedVmaLabel.innerHTML = app.getVma()
+    app.getVma()
+    if (!!app.vma){
+        estimatedVmaLabel.innerHTML = app.vma
+        vmaLabel.innerHTML = app.vma
+        vmaInput.value = app.vma    
+    }
 }
 
 const handleDistanceIn6minChange = (event)=>{
@@ -134,33 +147,44 @@ handleDistanceIn6minChange
 const handleMinuteExpectedChange = (event)=>{
 
     app.minuteExpected = parseInt(event.target.value)
-
     app.timeExpected = (app.hourExpected) * 60 + app.minuteExpected 
-    estimatedVmaLabel.innerHTML = app.getVma()
-    vmaInput.value = app.vma
+    app.getVma()
+
+    if (!!app.vma){
+        estimatedVmaLabel.innerHTML = app.vma
+        vmaLabel.innerHTML = app.vma
+        vmaInput.value = app.vma    
+    }
 }
 
 const handleHourExpectedChange = (event)=>{
 
     app.hourExpected =  parseInt(event.target.value)
-
     app.timeExpected = (app.hourExpected) * 60 + app.minuteExpected 
-    estimatedVmaLabel.innerHTML = app.getVma()
-    vmaInput.value = app.vma
+    app.getVma()
+  if (app.vma){
+        estimatedVmaLabel.innerHTML = app.vma
+        vmaLabel.innerHTML = app.vma
+        vmaInput.value = app.vma    
+    }
 }
 
 
 const handleVmaChange = (event)=>{
     const newVma = event.target.value
     app.vma = newVma
-    vmaLabel.innerHTML = newVma
-    trainingTimeLabel.innerHTML = app.getIntervallTime()
+    vmaLabel.innerHTML = app.vma
+    const times = app.getIntervallTime()
+    minTrainingTime.innerHTML = times.min
+    maxTrainingTime.innerHTML = times.max
 }
 
 const handleTrainingDistanceChange = (event)=>{
 
     app.trainingDistance = event.target.value
-    trainingTimeLabel.innerHTML = app.getIntervallTime()
+    const times = app.getIntervallTime()
+    minTrainingTime.innerHTML = times.min
+    maxTrainingTime.innerHTML = times.max
 }
 
 
@@ -173,7 +197,8 @@ const distanceIn6minInput = document.getElementById('distanceIn6min')
 const vmaInput = document.getElementById('vma')
 const vmaLabel =  document.getElementById('vmaLabel')
 const trainingDistance = document.getElementById('trainingDistance')
-const trainingTimeLabel = document.getElementById('trainingTime')
+const minTrainingTime = document.getElementById('minTrainingTime')
+const maxTrainingTime = document.getElementById('maxTrainingTime')
 
 
 distanceIn6minInput.onchange = handleDistanceIn6minChange
