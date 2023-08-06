@@ -10,7 +10,7 @@
         <h1>
             Jasons VMA!
         </h1>
-        <span class="separator"></span> 
+        <div class="separator"></div> 
     
      
         <div class="description ">
@@ -49,7 +49,7 @@
                 </div>
         
                 <div class="field ">
-                    <label > Temps souhaité: </label>
+                    <label >Temps souhaité:</label>
                     <div class="field flexRow">   
                         <input id="hourExpected" type="number" min="0" max="5" step="1" value="0"/>
                         <label for="hour" >h</label>
@@ -59,7 +59,7 @@
                 </div>
                 
                 <div class="field flexColumn">
-                    <label  >Objectif Vma : </label>
+                    <label class="vmaLabel red">Objectif Vma : </label>
                     <div class="vmaResult bgRed"><span id="estimatedVma"><span>km/h</div>
                 </div>
             </div> 
@@ -71,17 +71,17 @@
                 <div class="subTitle">Courir la plus grande distance pendant 6 minutes</div>
             </div>
             <div class="sectionContent">
-                <div>
+                <div class="sectionText">
                     Il existe un moyen simple de connaitre appproximativement sa vma en parcourant la plus grande distance en 6 minutes.
                 </div>
                 <div class="field flexcolumn">
-                    <label >Distance parcourue en 6 minutes: </label>
+                    <label >Distance parcourue en 6 minutes :</label>
                     <div  class="field flexRow"><input id="distanceIn6min" type="number">m</div>
                 </div>
 
                 
-                <div class="field">
-                    <label  class="blue" >Calculer sa VMA: </label>
+                <div class="field flexcolumn">
+                    <label  class="vmaLabel blue" >Calculer sa VMA : </label>
                     <div class="vmaResult bgBlue"><span id="computedVma"><span>km/h</div>
                 </div>
             </div>
@@ -94,15 +94,28 @@
                 <div class="subTitle">Travailler les intervalles</div>
             </div>
             <div class="sectionContent">
-                <div class="field flexColumn">
+               
 
-                    <div class="field flexColumn" >
+                <div class="sectionText">Maintenant que vous savez ce qu'est la VMA, vous 
+                    savez qu'il faut l'améliorer pour progresser !
+                    Vous l'avez calculée, vous êtes donc en mesure 
+                    de vous situer par rapport à cet indicateur. 
+                    <br> 
+                    
+                    Voici maintenant une partie très pratique 
+                    sur l'amélioration de votre VMA : pratiquez les intervalles !
+                    Tous les exercices de fractionné sont bons pour s'entrainer 
+                    et faire progresser votreVMA : en augmentant votre VMA, 
+                    vous allez être capable de courir plus longtemps et plus vite.
+                </div>
+                <div class="field flexColumn">
+                     <div class="field flexColumn" >
                         <label > VMA   <span id="vmaLabel" class="bgBlue">...</span> km/h</label>
                         <input id="vma" type="range" min="10" max="30"  step="0.1"/>
-                        </div>
                     </div>
+                </div>
 
-                    <div > 
+                    <div class="field flexColumn" > 
                         <label >Distance parcourue: </label>
 
                         <div class="selectContainer" id="trainingDistance">
@@ -121,10 +134,20 @@
                             <input type="radio" name="trainingDistance" id="trainingDistance5" value="500" >
                                 <label class="radioGroup" for="trainingDistance5">500m</label>
                             </input>
+                            <input type="radio" name="trainingDistance" id="trainingDistance6" value="800" >
+                            <label class="radioGroup" for="trainingDistance6">800m</label>
+                            <input type="radio" name="trainingDistance" id="trainingDistance7" value="1000" >
+                            <label class="radioGroup" for="trainingDistance7">1000m</label>
+                            <input type="radio" name="trainingDistance" id="trainingDistance8" value="1500" >
+                            <label class="radioGroup" for="trainingDistance7">1500m</label>
+                            <input type="radio" name="trainingDistance" id="trainingDistance9" value="2000" >
+                            <label class="radioGroup" for="trainingDistance7">2000m</label>
+                        </input>
                         </div>        
                     </div>
-                <div class="field">
-                    <label id="trainingTime"></label>
+                <div class="field flexColumn">
+                    <label  class="vmaLabel blue" >Temps de passage : </label>
+                    <div id="trainingTime"></div>
                 </div>
             </div>
         </div>
