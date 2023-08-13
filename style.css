@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "lato";
+    src: url("font/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: "lato";
+    src: url("font/Lato-Bold.ttf");
+    font-weight: bold;
+}
+
+
 .card{
     height: 100%;
     border-radius:10px;
@@ -47,7 +59,7 @@
 h1{
     margin-inline: auto;
     color:#1d4c91;
-    font-weight: normal;
+    font-weight: bold;
     text-transform: uppercase;
 
 }
@@ -87,6 +99,7 @@ h1{
 }
 
 .sectionText{
+    padding:4rem;
     text-align: center;
 }
 
@@ -106,15 +119,60 @@ input[type="number"]{
  color: #1d4c91;
 }
 
+input[type="text"]{
+    line-height: 3rem;
+    border: #1d4c91 solid 4px;
+    font-size: 2rem;
+    color: #1d4c91;
+   }
+   
 input[type="number"]:focus{
     line-height: 3rem;
     border: #1d4c91 solid 4px;
    }
 
+   input[type="text"]:focus{
+    line-height: 3rem;
+    border: #1d4c91 solid 4px;
+   }
+
+
 input[type="radio"]:checked + label{
     background-color: #1d4c91;
     color:white
 }
+
+input[type="range"]{
+    width: 50%;
+   
+    color:#1d4c91;
+  
+}
+
+input[type="range"]::-webkit-slider-thumb{
+
+   background-color: #1d4c91;
+   color:#1d4c91;
+}
+
+input[type="range"]::-moz-range-thumb{
+  
+  /* Centers thumb on the track */
+   background-color: #1d4c91;
+  
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #1d4c91;
+    
+   
+  }
+
+  input[type="range"]::-moz-range-track {
+    background: #1d4c91;
+   
+  }
 
 .blue{
     border-color: #1d4c91;
@@ -170,6 +228,7 @@ input[type="radio"]:checked + label{
     align-items: center;
     justify-content: space-evenly;
     gap:1rem;
+    width: 100%;
 
 }
 
@@ -198,8 +257,9 @@ label.blue{
 body{
 
     height: 100%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:lato;
     font-size: 1.8rem;
     line-height: 2rem;
     
 }
+

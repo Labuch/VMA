@@ -142,7 +142,9 @@ const handleDistanceIn6minChange = (event)=>{
     computedVmaVmaLabel.innerHTML = (app.getSpeed(event.target.value/1000, 1/10)).toFixed(1)
 }
 
-handleDistanceIn6minChange
+const handleDistanceIn6minInput = (event)=>{
+    event.target.value = event.target.value.replace(/\D+/g, '')
+}
 
 const handleMinuteExpectedChange = (event)=>{
 
@@ -200,7 +202,7 @@ const trainingDistance = document.getElementById('trainingDistance')
 const minTrainingTime = document.getElementById('minTrainingTime')
 const maxTrainingTime = document.getElementById('maxTrainingTime')
 
-
+distanceIn6minInput.oninput = handleDistanceIn6minInput
 distanceIn6minInput.onchange = handleDistanceIn6minChange
 distanceInput.onchange = handleDistanceChange
 hourExpectedInput.onchange = handleHourExpectedChange
