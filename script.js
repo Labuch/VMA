@@ -46,20 +46,20 @@ const RATIOVMAINTERVALL= {
         max:1
     },
     800:{
-        min:0.95,
-        max:1
+        min:0.85,
+        max:0.95
     },
     1000:{
-        min:0.75,
-        max:0.8
+        min:0.8,
+        max:0.9
     },
     1500:{
-        min:0.75,
-        max:0.8
+        min:0.8,
+        max:0.9
     },
     2000:{
-        min:0.65,
-        max:0.75
+        min:0.80,
+        max:0.85
     },
     
 } 
