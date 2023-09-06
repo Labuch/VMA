@@ -75,7 +75,7 @@ h1{
 
 .section{
     margin-top: 40px;
-    padding-top: 60px;
+    padding-top: 40px;
     padding-inline: 40px;
     padding-bottom: 20px;
     display: flex;
@@ -89,7 +89,7 @@ h1{
 .sectionContent{
     display: flex;
     flex-direction: column;
-    gap:2rem;
+    gap:1rem;
 }
 
 .radioGroup{
@@ -99,7 +99,8 @@ h1{
 
 .sectionText{
     padding:5%;
-    text-align: center;
+    text-align: justify;
+    
 }
 
 .logo{
@@ -117,12 +118,15 @@ input[type="text"]
  line-height: 2;
  border: #1d4c91 solid 2px;
  color: #1d4c91;
+ border-radius: 4px;
+ font-size: 1rem;
 }
    
 input[type="number"]:focus,
 input[type="text"]:focus{
     line-height: 2;
     border: #1d4c91 solid 2px;
+    border-radius: 4px;
    }
 
 input[type="radio"]:checked + label{
@@ -131,7 +135,7 @@ input[type="radio"]:checked + label{
 }
 
 input[type="range"]{
-    width: 50% ;
+    width: 80% ;
     color:#1d4c91 ;
     height: 30px;
 }
@@ -215,7 +219,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     display: flex;
     margin: auto;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap:1rem;
     width: 100%;
 
@@ -243,10 +247,17 @@ label.blue{
 }
 
 body{
-
+    margin:auto;
+    justify-content: center;
+    max-width: 500px;
     height: 100%;
     font-family:lato;
     line-height: 1;
+    text-align: justify;
     
+}
+
+.capital{
+    text-transform: uppercase;
 }
 

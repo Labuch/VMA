@@ -70,7 +70,7 @@ const getFormatedTime = (totalSeconds)=>{
     const minutes = Math.floor(totalSeconds/60); 
     const seconds =  totalSeconds - minutes * 60 ;
 
-    return `${minutes}:${seconds}s`
+    return `${minutes}:${seconds.toString().padStart(2, '0')}"`
 
 } 
 
@@ -106,7 +106,7 @@ class VmaApp {
             const expectedSpeed = this.getSpeed(MAP_DISTANCES[this.distance],this.timeExpected/60)
             const minVma = Number((expectedSpeed / RATIOVMA[this.distance].max).toFixed(1))
             const maxVma = Number((expectedSpeed / RATIOVMA[this.distance].min).toFixed(1))
-            this.vma =  Number(((minVma +  maxVma) /2 ).toFixed(1))
+            this.vma =  Number(((minVma +  maxVma) /2 ).toFixed(1).replace(/\.0$/, ''))
             return this.vma 
         }
        
@@ -139,7 +139,7 @@ const handleDistanceChange = (event)=>{
 }
 
 const handleDistanceIn6minChange = (event)=>{
-    computedVmaVmaLabel.innerHTML = (app.getSpeed(event.target.value/1000, 1/10)).toFixed(1)
+    computedVmaVmaLabel.innerHTML = (app.getSpeed(event.target.value/1000, 1/10)).toFixed(1).replace(/\.0$/, '')
 }
 
 const handleDistanceIn6minInput = (event)=>{
